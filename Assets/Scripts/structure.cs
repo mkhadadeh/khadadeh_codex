@@ -17,35 +17,36 @@ public class structure : MonoBehaviour {
         piece_swoop = false;
         piece_swish = false;
         piece_top = false;
-        gameObject.transform.GetChild(0).gameObject.SetActive(false);
-        gameObject.transform.GetChild(0).gameObject.SetActive(false);
-        gameObject.transform.GetChild(0).gameObject.SetActive(false);
-        gameObject.transform.GetChild(0).gameObject.SetActive(false);
-        gameObject.transform.GetChild(0).gameObject.SetActive(false);
+        //gameObject.transform.GetChild(0).gameObject.SetActive(false);
+       // gameObject.transform.GetChild(0).gameObject.SetActive(false);
+       // gameObject.transform.GetChild(0).gameObject.SetActive(false);
+        //gameObject.transform.GetChild(0).gameObject.SetActive(false);
+        //gameObject.transform.GetChild(0).gameObject.SetActive(false);
     }
 
 	
 	// Update is called once per frame
 	void Update () {
-		if(piece_disk = true && !gameObject.transform.GetChild(0).gameObject.activeSelf)
+		if(piece_disk == true && !gameObject.transform.GetChild(0).gameObject.activeSelf)
         {
             gameObject.transform.GetChild(0).gameObject.SetActive(true);
         }
-        if (piece_holder = true && !gameObject.transform.GetChild(1).gameObject.activeSelf)
+        if (piece_holder == true && !gameObject.transform.GetChild(1).gameObject.activeSelf)
         {
             gameObject.transform.GetChild(1).gameObject.SetActive(true);
         }
-        if (piece_swoop = true && !gameObject.transform.GetChild(2).gameObject.activeSelf)
-        {
-            gameObject.transform.GetChild(2).gameObject.SetActive(true);
-        }
-        if (piece_swish = true && !gameObject.transform.GetChild(3).gameObject.activeSelf)
+        if (piece_swoop == true && !gameObject.transform.GetChild(3).gameObject.activeSelf)
         {
             gameObject.transform.GetChild(3).gameObject.SetActive(true);
         }
-        if (piece_top = true && !gameObject.transform.GetChild(4).gameObject.activeSelf)
+        if (piece_swish == true && !gameObject.transform.GetChild(2).gameObject.activeSelf)
+        {
+            gameObject.transform.GetChild(2).gameObject.SetActive(true);
+        }
+        if (piece_top == true && !gameObject.transform.GetChild(4).gameObject.activeSelf)
         {
             gameObject.transform.GetChild(4).gameObject.SetActive(true);
         }
+
     }
 }
