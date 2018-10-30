@@ -5,12 +5,26 @@ using UnityEngine;
 public class player : MonoBehaviour {
 
     public GameObject Structure;
+    public GameObject Appear_Particles;
+
+    public Transform piece_disk_t;
+    public Transform piece_holder_t;
+    public Transform piece_swoop_t;
+    public Transform piece_swish_t;
+    public Transform piece_top_t;
 
     private bool piece_disk;
     private bool piece_holder;
     private bool piece_swoop;
     private bool piece_swish;
     private bool piece_top;
+
+    bool updating;
+    GameObject part_instance;
+    GameObject part_instance1;
+    GameObject part_instance2;
+    GameObject part_instance3;
+    GameObject part_instance4;
 
     // Use this for initialization
     void Start () {
@@ -19,6 +33,7 @@ public class player : MonoBehaviour {
         piece_swoop = false;
         piece_swish = false;
         piece_top = false;
+        updating = false;
     }
 
     // Update is called once per frame
@@ -30,7 +45,11 @@ public class player : MonoBehaviour {
             if (Physics.Raycast(pointRay, out hit)) {
                 if (hit.collider.tag == "Pedestal")
                 {
-                    updatePedestal();
+                    if (!updating)
+                    {
+                        updating = true;
+                        StartCoroutine(updatePedestal());
+                    }
                 }
             }
         }
@@ -42,18 +61,46 @@ public class player : MonoBehaviour {
             {
                 if (hit.collider.tag == "Pedestal")
                 {
-                    updatePedestal();
+                    if (!updating)
+                    {
+                        updating = true;
+                        StartCoroutine(updatePedestal());
+                    }
                 }
             }
         }
     }
 
-    void updatePedestal(){
-        Structure.GetComponent<structure>().piece_disk = piece_disk;
-        Structure.GetComponent<structure>().piece_holder = piece_holder;
-        Structure.GetComponent<structure>().piece_swoop = piece_swoop;
-        Structure.GetComponent<structure>().piece_swish = piece_swish;
+    IEnumerator updatePedestal(){
+        
         Structure.GetComponent<structure>().piece_top = piece_top;
+        part_instance = Instantiate(Appear_Particles, piece_top_t);
+        part_instance.transform.localPosition = new Vector3(-0.0254f,0.2101f,0);
+        part_instance.transform.parent = Structure.transform;
+
+        yield return new WaitForSeconds(1);
+        Structure.GetComponent<structure>().piece_swish = piece_swish;
+        part_instance1 = Instantiate(Appear_Particles, piece_swish_t);
+        part_instance1.transform.localPosition = new Vector3(-0.01f, 0.008f, 0.01f);
+        part_instance1.transform.parent = Structure.transform;
+
+        yield return new WaitForSeconds(1);
+        Structure.GetComponent<structure>().piece_swoop = piece_swoop;
+        part_instance2 = Instantiate(Appear_Particles, piece_swoop_t);
+        part_instance2.transform.localPosition = new Vector3(-0.01f, 0.008f, 0.01f);
+        part_instance2.transform.parent = Structure.transform;
+
+        yield return new WaitForSeconds(1);
+        Structure.GetComponent<structure>().piece_holder = piece_holder;
+        part_instance3 = Instantiate(Appear_Particles, piece_holder_t);
+        part_instance3.transform.localPosition = new Vector3(0.004f, 0.04f, 0.0004f);
+        part_instance3.transform.parent = Structure.transform;
+
+        yield return new WaitForSeconds(1);
+        Structure.GetComponent<structure>().piece_disk = piece_disk;
+        part_instance4 = Instantiate(Appear_Particles, piece_disk_t.position, Quaternion.identity);
+        part_instance4.transform.localPosition = new Vector3(3, 2.86f, 0);
+        updating = false;
     }
 
     public void collect(string piece_tag) {
