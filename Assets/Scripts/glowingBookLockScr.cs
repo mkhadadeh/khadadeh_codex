@@ -17,7 +17,6 @@ public class glowingBookLockScr : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        Debug.Log(Vector3.Distance(book_pos, book.transform.position));
 		if(locked && Vector3.Distance(book_pos, book.transform.position) >= 1)
         {
             unlock();

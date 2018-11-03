@@ -17,11 +17,6 @@ public class structure : MonoBehaviour {
         piece_swoop = false;
         piece_swish = false;
         piece_top = false;
-        //gameObject.transform.GetChild(0).gameObject.SetActive(false);
-       // gameObject.transform.GetChild(0).gameObject.SetActive(false);
-       // gameObject.transform.GetChild(0).gameObject.SetActive(false);
-        //gameObject.transform.GetChild(0).gameObject.SetActive(false);
-        //gameObject.transform.GetChild(0).gameObject.SetActive(false);
     }
 
 	
@@ -48,5 +43,11 @@ public class structure : MonoBehaviour {
             gameObject.transform.GetChild(4).gameObject.SetActive(true);
         }
 
+        if (piece_disk && piece_holder && piece_swish && piece_swoop && piece_top)
+            victory();
+    }
+
+    void victory() {
+        Debug.Log("You win!");
     }
 }
