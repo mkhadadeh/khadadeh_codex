@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class structure : MonoBehaviour {
 
+    public GameObject controller;
     public bool piece_disk;
     public bool piece_holder;
     public bool piece_swoop;
@@ -44,10 +45,6 @@ public class structure : MonoBehaviour {
         }
 
         if (piece_disk && piece_holder && piece_swish && piece_swoop && piece_top)
-            victory();
-    }
-
-    void victory() {
-        Debug.Log("You win!");
+            controller.GetComponent<GameController>().Victory();
     }
 }
