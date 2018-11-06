@@ -5,6 +5,7 @@ using UnityEngine;
 public class GameController : MonoBehaviour {
 
     public GameObject spot_light;
+    public GameObject all_light;
 
 	// Use this for initialization
 	void Start () {
@@ -20,5 +21,6 @@ public class GameController : MonoBehaviour {
     {
         Debug.Log("Victory!");
         spot_light.SetActive(true);
+        all_light.SetActive(false);
     }
 }
