@@ -38,13 +38,13 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.3308161, g: 0.36847916, b: 0.48019516, a: 1}
+  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 11
-  m_GIWorkflowMode: 0
+  m_GIWorkflowMode: 1
   m_GISettings:
     serializedVersion: 2
     m_BounceScale: 1
@@ -72,7 +72,7 @@ LightmapSettings:
     m_FinalGatherRayCount: 256
     m_ReflectionCompression: 2
     m_MixedBakeMode: 2
-    m_BakeBackend: 1
+    m_BakeBackend: 0
     m_PVRSampling: 1
     m_PVRDirectSampleCount: 32
     m_PVRSampleCount: 256
@@ -6071,6 +6071,7 @@ GameObject:
   - component: {fileID: 437398284}
   - component: {fileID: 437398285}
   - component: {fileID: 437398286}
+  - component: {fileID: 437398287}
   m_Layer: 0
   m_Name: holder_piece_pickup
   m_TagString: Holder
@@ -6085,8 +6086,8 @@ Transform:
     type: 3}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 437398281}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.117, y: 0.0349, z: -0.612}
+  m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
+  m_LocalPosition: {x: 0.117, y: 0.0378, z: -0.612}
   m_LocalScale: {x: 0.24893, y: 0.24893, z: 0.24893}
   m_Children:
   - {fileID: 105012627}
@@ -6095,7 +6096,7 @@ Transform:
   - {fileID: 223462423}
   m_Father: {fileID: 575083177}
   m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
 --- !u!54 &437398283
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -6152,6 +6153,24 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Player: {fileID: 420524191}
   Indicators: {fileID: 1515511144129584, guid: 9d0dfebf2140e6149bdab14ae1682672, type: 2}
+--- !u!95 &437398287
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 437398281}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: e6eb785dc116486488fa666eb9745c93, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &488964398
 GameObject:
   m_ObjectHideFlags: 0
@@ -8243,7 +8262,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 591740096}
   m_LocalRotation: {x: 0.50000006, y: 0.5, z: 0.50000006, w: 0.5}
-  m_LocalPosition: {x: -0.029, y: 0.083871, z: 0.2169}
+  m_LocalPosition: {x: -0.029, y: 0.0484, z: 0.2169}
   m_LocalScale: {x: 0.47456336, y: 0.016202865, z: 0.47456336}
   m_Children:
   - {fileID: 988310375}
@@ -27601,6 +27620,7 @@ GameObject:
   - component: {fileID: 1397541757}
   - component: {fileID: 1397541758}
   - component: {fileID: 1397541759}
+  - component: {fileID: 1397541760}
   m_Layer: 0
   m_Name: wonky_piece_pickup
   m_TagString: Swish
@@ -27616,7 +27636,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1397541752}
   m_LocalRotation: {x: 0.43045935, y: 0.56098557, z: 0.43045935, w: 0.56098557}
-  m_LocalPosition: {x: 0.651, y: 0.0634, z: -0.3494}
+  m_LocalPosition: {x: 0.6304, y: 0.055, z: -0.315}
   m_LocalScale: {x: 0.41831353, y: 0.41831353, z: 0.41831353}
   m_Children:
   - {fileID: 580880820}
@@ -27726,6 +27746,24 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Player: {fileID: 420524191}
   Indicators: {fileID: 1515511144129584, guid: 9d0dfebf2140e6149bdab14ae1682672, type: 2}
+--- !u!95 &1397541760
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1397541752}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 85f0d049417c96c4ca7923e64afda30e, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &1459479137
 GameObject:
   m_ObjectHideFlags: 0
@@ -27741,6 +27779,7 @@ GameObject:
   - component: {fileID: 1459479143}
   - component: {fileID: 1459479142}
   - component: {fileID: 1459479144}
+  - component: {fileID: 1459479145}
   m_Layer: 0
   m_Name: small_wonky_piece_pickup
   m_TagString: Swoop
@@ -27756,7 +27795,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1459479137}
   m_LocalRotation: {x: 0.7071068, y: -0, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: 0.434, y: 0.0681, z: -0.784}
+  m_LocalPosition: {x: 0.4505, y: 0.0614, z: -0.7184}
   m_LocalScale: {x: 0.27933, y: 0.27933, z: 0.27933}
   m_Children:
   - {fileID: 1954947045}
@@ -27866,6 +27905,24 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Player: {fileID: 420524191}
   Indicators: {fileID: 1515511144129584, guid: 9d0dfebf2140e6149bdab14ae1682672, type: 2}
+--- !u!95 &1459479145
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1459479137}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: d62924e61d9a2e544a166f62a8a66d86, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &1505562686 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 100000, guid: 3f800674c4bbd004dbe84fc0c985f98c,
@@ -33928,6 +33985,7 @@ GameObject:
   - component: {fileID: 1667228284}
   - component: {fileID: 1667228286}
   - component: {fileID: 1667228287}
+  - component: {fileID: 1667228288}
   m_Layer: 0
   m_Name: top_piece_pickup
   m_TagString: Top
@@ -34021,6 +34079,24 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Player: {fileID: 420524191}
   Indicators: {fileID: 1515511144129584, guid: 9d0dfebf2140e6149bdab14ae1682672, type: 2}
+--- !u!95 &1667228288
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1667228281}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 07e97790f8723a042b042f8584416a36, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1001 &1671284083
 Prefab:
   m_ObjectHideFlags: 0
