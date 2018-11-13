@@ -13,11 +13,11 @@ public class player : MonoBehaviour {
     public Transform piece_swish_t;
     public Transform piece_top_t;
 
-    private bool piece_disk;
-    private bool piece_holder;
-    private bool piece_swoop;
-    private bool piece_swish;
-    private bool piece_top;
+    public bool piece_disk;
+    public bool piece_holder;
+    public bool piece_swoop;
+    public bool piece_swish;
+    public bool piece_top;
 
     bool updating;
     GameObject part_instance;
