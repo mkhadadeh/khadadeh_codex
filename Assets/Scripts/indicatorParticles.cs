@@ -4,14 +4,18 @@ using UnityEngine;
 
 public class indicatorParticles : MonoBehaviour {
     public Gradient grad;
+    public float pit;
 	// Use this for initialization
 	void Start () {
         var col = gameObject.GetComponent<ParticleSystem>().colorOverLifetime;
         col.color = grad;
-	}
-	
-	// Update is called once per frame
-	void Update () {
+        var Asource = transform.GetChild(0).GetComponent<AudioSource>();
+        Asource.pitch = pit;
+        Debug.Log(Asource.pitch);
+    }
+
+    // Update is called once per frame
+    void Update () {
         Destroy(gameObject, 1);
 	}
 }

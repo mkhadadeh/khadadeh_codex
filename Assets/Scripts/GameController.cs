@@ -6,6 +6,7 @@ public class GameController : MonoBehaviour {
 
     public GameObject spot_light;
     public GameObject all_light;
+    public GameObject hud;
 
 	// Use this for initialization
 	void Start () {
@@ -22,5 +23,6 @@ public class GameController : MonoBehaviour {
         Debug.Log("Victory!");
         spot_light.SetActive(true);
         all_light.SetActive(false);
+        hud.GetComponent<HUD>().win();
     }
 }
