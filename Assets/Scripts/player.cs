@@ -80,7 +80,11 @@ public class player : MonoBehaviour {
         {
             SceneManager.LoadScene("UIScene");
         }
-		if(!OVRInput.Get(OVRInput.Touch.PrimaryIndexTrigger) && OVRInput.Get(OVRInput.Axis1D.PrimaryHandTrigger) == 1.0f)
+        if (OVRInput.GetDown(OVRInput.Button.Two))
+        {
+            SceneManager.LoadScene("Main Scene");
+        }
+        if (!OVRInput.Get(OVRInput.Touch.PrimaryIndexTrigger) && OVRInput.Get(OVRInput.Axis1D.PrimaryHandTrigger) == 1.0f)
         {
             RaycastHit hit;
             Ray pointRay = new Ray(transform.GetChild(1).GetChild(0).GetChild(4).position, transform.GetChild(1).GetChild(0).GetChild(4).forward);
