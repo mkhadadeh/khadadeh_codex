@@ -11,7 +11,6 @@ public class indicatorParticles : MonoBehaviour {
         col.color = grad;
         var Asource = transform.GetChild(0).GetComponent<AudioSource>();
         Asource.pitch = pit;
-        Debug.Log(Asource.pitch);
     }
 
     // Update is called once per frame

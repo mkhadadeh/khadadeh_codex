@@ -20,7 +20,6 @@ public class GameController : MonoBehaviour {
 
     public void Victory()
     {
-        Debug.Log("Victory!");
         spot_light.SetActive(true);
         all_light.SetActive(false);
         hud.GetComponent<HUD>().win();

@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+using UnityEngine.SceneManagement;
+
 public class player : MonoBehaviour {
 
     public GameObject Structure;
@@ -74,6 +76,10 @@ public class player : MonoBehaviour {
 
     // Update is called once per frame
     void Update () {
+        if(OVRInput.GetDown(OVRInput.Button.One))
+        {
+            SceneManager.LoadScene("UIScene");
+        }
 		if(!OVRInput.Get(OVRInput.Touch.PrimaryIndexTrigger) && OVRInput.Get(OVRInput.Axis1D.PrimaryHandTrigger) == 1.0f)
         {
             RaycastHit hit;
@@ -114,6 +120,7 @@ public class player : MonoBehaviour {
         part_instance.transform.localPosition = new Vector3(-0.0254f,0.2101f,0);
         part_instance.transform.parent = Structure.transform;
         part_instance.GetComponent<indicatorParticles>().grad = grads[4];
+        part_instance.GetComponent<indicatorParticles>().pit = 1.5f;
 
         yield return new WaitForSeconds(1);
         Structure.GetComponent<structure>().piece_swish = piece_swish;
@@ -121,6 +128,7 @@ public class player : MonoBehaviour {
         part_instance1.transform.localPosition = new Vector3(-0.01f, 0.008f, 0.01f);
         part_instance1.transform.parent = Structure.transform;
         part_instance1.GetComponent<indicatorParticles>().grad = grads[3];
+        part_instance1.GetComponent<indicatorParticles>().pit = 1.2f;
 
         yield return new WaitForSeconds(1);
         Structure.GetComponent<structure>().piece_swoop = piece_swoop;
@@ -128,6 +136,7 @@ public class player : MonoBehaviour {
         part_instance2.transform.localPosition = new Vector3(-0.01f, 0.008f, 0.01f);
         part_instance2.transform.parent = Structure.transform;
         part_instance2.GetComponent<indicatorParticles>().grad = grads[2];
+        part_instance2.GetComponent<indicatorParticles>().pit = 1f;
 
         yield return new WaitForSeconds(1);
         Structure.GetComponent<structure>().piece_holder = piece_holder;
@@ -135,12 +144,14 @@ public class player : MonoBehaviour {
         part_instance3.transform.localPosition = new Vector3(0.004f, 0.04f, 0.0004f);
         part_instance3.transform.parent = Structure.transform;
         part_instance3.GetComponent<indicatorParticles>().grad = grads[1];
+        part_instance3.GetComponent<indicatorParticles>().pit = 0.8f;
 
         yield return new WaitForSeconds(1);
         Structure.GetComponent<structure>().piece_disk = piece_disk;
         part_instance4 = Instantiate(Appear_Particles, piece_disk_t.position, Quaternion.identity);
-        part_instance4.transform.localPosition = new Vector3(3, 2.86f, 0);
+        part_instance4.transform.localPosition = new Vector3(3, 1f, 0);
         part_instance4.GetComponent<indicatorParticles>().grad = grads[0];
+        part_instance4.GetComponent<indicatorParticles>().pit = 0.5f;
         updating = false;
     }
 

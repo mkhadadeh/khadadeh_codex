@@ -9,7 +9,6 @@ public class loadScene : MonoBehaviour {
     public void ChangeScene()
     {
         //Changes to game scene
-        Debug.Log("Change Scene");
         SceneManager.LoadScene("Main Scene");
     }
 }
